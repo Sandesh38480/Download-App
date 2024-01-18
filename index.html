@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+.logo {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+}
+
+#message {
+  font-weight: bold;
+  color: #ff0000;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+    </style>
+  <meta charset="UTF-8">
+  <title>APK Download</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Logo" class="logo">
+    <p>Download Our Note Apps</p>
+    <p id="message"></p>
+    <button id="downloadBtn">Download</button>
+  </div>
+
+  <script>
+   // Replace 'your_apk_file_url' with the actual URL of your APK file
+const apkFileUrl = 'PU Civil Engineering Notes_1_1.0.apk';
+
+document.getElementById('downloadBtn').addEventListener('click', function() {
+  downloadApkFile(apkFileUrl);
+});
+
+function downloadApkFile(url) {
+  // Create a temporary anchor element
+  const anchor = document.createElement('a');
+  anchor.style.display = 'none';
+  anchor.href = url;
+  anchor.download = 'Engineering.apk'; // Set the desired file name here
+
+  // Append the anchor to the body
+  document.body.appendChild(anchor);
+
+  // Trigger a click event on the anchor
+  anchor.click();
+
+  // Remove the anchor from the body
+  document.body.removeChild(anchor);
+}
+
+  </script>
+</body>
+</html>
